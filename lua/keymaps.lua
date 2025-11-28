@@ -1,6 +1,13 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
 
+-- Fix: built-in snippet engine steals <Tab> and overrides Blink
+pcall(function()
+  vim.keymap.del("i", "<Tab>")
+end)
+
+
+
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')

@@ -2,6 +2,14 @@ return {
 
   { -- Linting
     'mfussenegger/nvim-lint',
+    opts = {
+      linters = {
+        markdownlint = {
+          args = { '--disable', 'MD013', '--' },
+        },
+      },
+    },
+
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
