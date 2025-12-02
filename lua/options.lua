@@ -76,4 +76,17 @@ vim.o.scrolloff = 10
 -- See `:help 'confirm'`
 vim.o.confirm = true
 
+-- Treesitter folding
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
+vim.opt.foldenable = true
+vim.opt.foldlevel = 99 -- keep folds open by default
+vim.opt.foldlevelstart = 99 -- ensure files open unfolded
+
+vim.opt.conceallevel = 2
+vim.opt.concealcursor = 'nc'
+
+-- Don't conceal inside Markdown code fences
+vim.g.markdown_syntax_conceal = 0
+
 -- vim: ts=2 sts=2 sw=2 et

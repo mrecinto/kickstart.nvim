@@ -3,10 +3,14 @@
 
 -- Fix: built-in snippet engine steals <Tab> and overrides Blink
 pcall(function()
-  vim.keymap.del("i", "<Tab>")
+  vim.keymap.del('i', '<Tab>')
 end)
 
-
+-- WSL Copy/Paste with Ctrl-C / Ctrl-V
+vim.keymap.set('n', '<C-c>', '"+yy')
+vim.keymap.set('v', '<C-c>', '"+y')
+vim.keymap.set('n', '<C-v>', '"+p')
+vim.keymap.set('i', '<C-v>', '<C-r>+')
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 --  See `:help hlsearch`

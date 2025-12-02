@@ -17,6 +17,17 @@ return {
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
+    config = function(_, opts)
+      require('nvim-treesitter.configs').setup(opts)
+
+      -- Treesitter-powered folding
+      vim.o.foldmethod = 'expr'
+      vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+      vim.o.foldenable = true
+      vim.o.foldlevel = 99
+      vim.o.foldlevelstart = 99
+    end,
+
     -- There are additional nvim-treesitter modules that you can use to interact
     -- with nvim-treesitter. You should go explore a few and see what interests you:
     --
