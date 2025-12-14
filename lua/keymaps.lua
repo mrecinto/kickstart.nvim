@@ -1,5 +1,24 @@
 -- [[ Basic Keymaps ]]
 --  See `:help vim.keymap.set()`
+--
+--
+--
+--
+--
+
+--tab cursor jump thing
+vim.keymap.set('i', '<Tab>', function()
+  local col = vim.fn.col '.'
+  local line = vim.fn.getline '.'
+  local next_char = line:sub(col, col)
+
+  -- If the next character is a closing delimiter, jump over it
+  if next_char:match '[%)%]%}]' then
+    return '<Right>'
+  end
+
+  return '<Tab>'
+end, { expr = true })
 
 -- Fix: built-in snippet engine steals <Tab> and overrides Blink
 pcall(function()

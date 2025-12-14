@@ -6,12 +6,12 @@ return {
   opts = {
     -- enable whatever features you want:
     ui = {
-      input = true,
-      select = true,
-      notifications = true,
-      popup = true,
-      cmdline = true, -- ⭐ THIS is the floating command-line popup
-      palette = true, -- fuzzy menu for ex-commands
+      input = false,
+      select = false,
+      notifications = false,
+      popup = false,
+      cmdline = false, -- ⭐ THIS is the floating command-line popup
+      palette = false, -- fuzzy menu for ex-commands
     },
     picker = {
       enabled = true,

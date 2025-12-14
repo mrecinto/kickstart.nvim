@@ -9,25 +9,23 @@ return {
   },
 
   opts = {
-    keymap = {
-      preset = 'default',
-    },
-
+    -- Disable auto-completion completely
     completion = {
+      enabled = false, -- ← DISABLES completion popup
       menu = {
-        border = 'rounded',
+        enabled = false, -- ← Hide the popup menu UI
       },
-
+      ghost_text = {
+        enabled = false, -- optional
+      },
       documentation = {
         window = {
           border = 'rounded',
         },
       },
-
-      ghost_text = {
-        enabled = true, -- ⭐ your version expects a TABLE
-      },
     },
+
+    keymap = { preset = 'default' },
 
     sources = {
       default = {
@@ -39,10 +37,7 @@ return {
     },
 
     signature = {
-      enabled = true,
-      window = {
-        border = 'rounded',
-      },
+      enabled = false, -- optional: disable signature popups
     },
   },
 }
